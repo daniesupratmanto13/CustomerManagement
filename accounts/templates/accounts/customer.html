@@ -1,0 +1,19 @@
+<h3>Customer</h3>
+
+<h3>{{customer.name}}</h3>
+<h3>{{customer.email}}</h3>
+<h3>{{customer.phone}}</h3>
+
+<h2>Total Order</h2>
+<h3>{{total_order}}</h3>
+
+<h2>Order</h2>
+{% for order in orders %}
+<p>{{order.product.name}}</p>
+<p>{{order.note}}</p>
+<p>{{order.date_created}}</p>
+<p>{{order.status}}</p>
+<hr>
+{% endfor %}
+
+<a href="{% url 'home' %}">Back</a>

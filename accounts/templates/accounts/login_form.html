@@ -1,0 +1,17 @@
+<h3>{{title}}</h3>
+
+
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    {{form.username.label_tag}}
+    {{form.username}}
+    {{form.password.label_tag}}
+    {{form.password}}
+    <button type="submit">Login</button>
+    {{form.errors}}
+</form>
+
+{% for message in messages %}
+  {{message}}
+{% endfor %}
+<a href="{% url 'registration' %}">Sign Up</a>

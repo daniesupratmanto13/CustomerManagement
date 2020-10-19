@@ -1,0 +1,9 @@
+<h3>Delete Order</h3>
+
+<h4>Delete Order Confirmation</h4>
+<p>Are you sure to delete {{name}} ? </p>
+<form action="" method="POST">
+    {% csrf_token %}
+    <button type="submit">Yes</button>
+</form>
+<button><a href="{% url 'home' %}">Cancel</a></button>

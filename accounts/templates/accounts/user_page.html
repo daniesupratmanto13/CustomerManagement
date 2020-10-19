@@ -1,0 +1,15 @@
+<h3>User Page</h3>
+
+<h4><a href="{% url 'logout' %}">Logout</a></h4>
+
+<h4>{{user}}</h4>
+
+{% for order in orders %}
+  <p><b>{{order.product.name}}</b></p>
+  <p>{{order.note}}</p>
+  <p>{{order.date_created}}</p>
+  <p>{{order.status}}</p>
+  <hr>
+{% endfor %}
+
+<button><a href="{% url 'account_setting' user.customermodel.pk %}">Setting</a></button>

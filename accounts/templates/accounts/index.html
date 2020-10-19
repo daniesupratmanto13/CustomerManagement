@@ -1,0 +1,33 @@
+<h3>dashboard</h3>
+
+<a href="{% url 'logout' %}">Logout</a>
+
+<h2>Customer</h2>
+{% for customer in customers %}
+<a href="{% url 'customer' customer.id %}">view</a>
+<p>{{customer.name}}</p>
+<p>{{customer.email}}</p>
+<p>{{customer.phone}}</p>
+{% endfor %}
+
+<hr>
+<br>
+
+<h2>Orders</h2>
+<h3><a href="{% url 'create_order' %}">Create Order</a></h3>
+{% for order in orders %}
+<p><b>{{order.customer.name}}</b></p>
+<p>{{order.product.name}}</p>
+<p>{{order.date_created}}</p>
+<p>{{order.status}}</p>
+<a href="{% url 'update_order' order.id %}">Update</a>
+<a href="{% url 'delete_order' order.id %}">Delete</a>
+<hr>
+{% endfor %}
+<hr>
+<br>
+
+<h2>Info</h2>
+<p>{{total_order}}</p>
+<p>{{total_delivered}}</p>
+<p>{{total_pending}}</p>

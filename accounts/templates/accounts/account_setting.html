@@ -1,0 +1,10 @@
+<h3>Account Setting</h3>
+
+<img src="{{request.user.customermodel.profile_pic.url}}" alt="">
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+</form>
+<a href="{% url 'user_page' %}"><button type="submit">Back</button></a>
